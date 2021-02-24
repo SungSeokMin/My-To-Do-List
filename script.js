@@ -55,17 +55,19 @@ function inputToDoListHandler (e) {
     makeMyList(userValue, messageValue);
   }
 
+  // 등록 버튼 눌렀을 때 DATA에 저장
   let newObj = {
     user : userValue,
     message : messageValue,
     createdAt : new Date().format()
   }
   DATA.push(newObj);
-
+  
   userInfo.value = '';
   messageInfo.value = '';  
 }
 
+// 체크박스 누르면 백그라운드 색깔 변경
 function changeBackgroundHandler (e) {
 
   let parent = e.target.parentElement;
@@ -80,6 +82,7 @@ function changeBackgroundHandler (e) {
   }
 }
 
+// 완료 버튼 눌렀을 때 삭제
 function checkRemoveListHandler (e) {
   //버튼 클릭 시 ul 태그를 remove.
   let parent = e.target.parentElement;
